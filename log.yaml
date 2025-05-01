@@ -1,0 +1,7 @@
+# Example Logstash pipeline for IoT logs
+input {
+  udp { port => 514 type => "iot-logs" }
+}
+output {
+  elasticsearch { hosts => ["localhost:9200"] index => "iot-logs" }
+}
